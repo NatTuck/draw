@@ -23,7 +23,7 @@ defmodule DrawWeb.UserSocket do
     case Phoenix.Token.verify(socket, "user socket", token, max_age: 1209600) do
       {:ok, user} ->
         {:ok, assign(socket, :user, user)}
-      {:error, reason} ->
+      {:error, _reason} ->
         :error
     end
   end
