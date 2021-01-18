@@ -5,7 +5,8 @@ SECRET="$CONFDIR/secret"
 mkdir -p "$CONFDIR"
 
 if [ ! -f "$SECRET" ]; then
-    MIX_ENV="dev" mix phx.gen.secret > "$SECRET"
+    dd if=/dev/urandom of=/tmp/secret.$$ bs=1 count=48
+    xxd -p -c96 /tmp/secret.$$ > "$SECRET"
 fi
 
 export MIX_ENV=prod
