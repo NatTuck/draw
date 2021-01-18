@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="column">
+    <p>Log In Form</p>
+    <%= form_for @conn, Routes.page_path(@conn, :join), fn f -> %>
+      <div>
+        <%= text_input f, :name, placeholder: "Name" %>
+      </div>
+      <div>
+        <%= submit "Join" %>
+      </div>
+    <% end %>
+  </div>
+</div>

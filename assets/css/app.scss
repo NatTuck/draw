@@ -1,0 +1,15 @@
+/* This file is for your main application css. */
+@import "~milligram/dist/milligram";
+
+.container {
+    max-width: 112rem;
+}
+
+.drawbox {
+    border: thin dashed black;
+}
+
+.controls {
+    font-size: 24pt;
+}
+
