@@ -1,0 +1,21 @@
+upstream draw_app {
+    server localhost:4780;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name draw.ironbeard.com;
+
+    location / {
+        proxy_pass http://draw_app;
+    }
+
+    location /socket {
+        proxy_pass http://draw_app;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}

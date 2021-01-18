@@ -1,0 +1,15 @@
+[Unit]
+Description=DrawApp
+
+[Service]
+Type=simple
+User=draw
+Group=draw
+Restart=on-failure
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/draw/draw
+ExecStart=bash /home/draw/draw/start.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -5,7 +5,7 @@ SECRET="$CONFDIR/secret"
 mkdir -p "$CONFDIR"
 
 if [ ! -f "$SECRET" ]; then
-    MIX_ENV="" mix phx.gen.secret > "$SECRET"
+    MIX_ENV="dev" mix phx.gen.secret > "$SECRET"
 fi
 
 export MIX_ENV=prod
